@@ -16,14 +16,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from users import views as users_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('register/', users_views.register, name='register'),
     path('', include('blog.urls')), # if string empty, then just local host will => home
 
 
 
-    
+
     # path('about/', include('about.urls')), isme kuch nahi karna, humne upar hi blog urls mein redirect karne bol diya
     # blog urls mein about, home, sabka logic likha hua h maine
 ]
